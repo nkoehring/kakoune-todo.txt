@@ -1,7 +1,7 @@
 # Detection
 # ‾‾‾‾‾‾‾‾‾
 
-hook global BufCreate .+\.todo\.txt %{
+hook global BufCreate .*[.]?(todo\.txt) %{
     set buffer filetype todotxt
 
     def -docstring 'move all done items to the end' todo-done2bottom %{
