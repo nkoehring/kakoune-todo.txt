@@ -1,2 +1,3 @@
 # kakoune-todo.txt
-Todo.txt Colorscheme and Helper commands for Kakoune
+Todo.txt Colorscheme for Kakoune
+
