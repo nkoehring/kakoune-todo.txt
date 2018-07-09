@@ -1,22 +1,22 @@
 hook global BufCreate .*[.]?(todo\.txt) %{
     set buffer filetype todotxt
 
-    def -docstring 'move all done items to the end' todo-done2bottom %{
+    def -hidden todo-done2bottom %{
         try %{
             exec '%<a-s><a-k>^x <ret>dge<a-p>:echo %reg{#} items moved<ret>'
         }
     }
-    def -docstring 'move all high priority items to the top' todo-a2top %{
+    def -hidden todo-a2top %{
         try %{
             exec '%<a-s><a-k>^\(A\) <ret>dgg<a-P>:echo %reg{#} items moved<ret>'
         }
     }
-    def -docstring 'move all medium priority items to the top' todo-b2top %{
+    def -hidden todo-b2top %{
         try %{
             exec '%<a-s><a-k>^\(B\) <ret>dgg<a-P>:echo %reg{#} items moved<ret>'
         }
     }
-    def -docstring 'move all low priority items to the top' todo-c2top %{
+    def -hidden todo-c2top %{
         try %{
             exec '%<a-s><a-k>^\(C\) <ret>dgg<a-P>:echo %reg{#} items moved<ret>'
         }
