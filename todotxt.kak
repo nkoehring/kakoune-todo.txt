@@ -49,15 +49,15 @@ face global TodoPrioC cyan+b
 face global TodoDate default+b
 
 
-add-highlighter global/ group todotxt
-add-highlighter global/todotxt regex "^x ([^\n]+)" 0:comment                 # done items
-add-highlighter global/todotxt regex "^\(A\) ([^\n]+)" 0:TodoPrioA           # priority (A)
-add-highlighter global/todotxt regex "^\(B\) ([^\n]+)" 0:TodoPrioB           # priority (B)
-add-highlighter global/todotxt regex "^\(C\) ([^\n]+)" 0:TodoPrioC           # priority (C)
-add-highlighter global/todotxt regex "([^:|^ ]+:)([^ |^\n]+)" 0:value 1:type # key:value
-add-highlighter global/todotxt regex "(\+[^\+|^ |^\n]+)" 0:keyword           # +project
-add-highlighter global/todotxt regex "(@[^\+|^ |^\n]+)" 0:meta               # @context
-add-highlighter global/todotxt regex "(\d{4}-\d{2}-\d{2})" 0:TodoDate        # date
+add-highlighter global/todotxt group
+add-highlighter global/todotxt/comment regex "^x ([^\n]+)" 0:comment                   # done items
+add-highlighter global/todotxt/prio-a regex "^\(A\) ([^\n]+)" 0:TodoPrioA              # priority (A)
+add-highlighter global/todotxt/prio-b regex "^\(B\) ([^\n]+)" 0:TodoPrioB              # priority (B)
+add-highlighter global/todotxt/prio-c regex "^\(C\) ([^\n]+)" 0:TodoPrioC              # priority (C)
+add-highlighter global/todotxt/key-value regex "([^:|^ ]+:)([^ |^\n]+)" 0:value 1:type # key:value
+add-highlighter global/todotxt/keyword regex "(\+[^\+|^ |^\n]+)" 0:keyword             # +project
+add-highlighter global/todotxt/meta regex "(@[^\+|^ |^\n]+)" 0:meta                    # @context
+add-highlighter global/todotxt/date regex "(\d{4}-\d{2}-\d{2})" 0:TodoDate             # date
 
 hook -group todotxt-highlight global WinSetOption filetype=todotxt %{ add-highlighter window ref todotxt }
 hook -group todotxt-highlight global WinSetOption filetype=(?!todotxt).* %{ remove-highlighter window/todotxt }

@@ -2,7 +2,7 @@
 
 Easier editing of todo.txt files in Kakoune. Includes highlighting and typical commands to manipulate items.
 
-The master branch should work with the newest tagged version of Kakoune (currently [v2018.04.13](https://github.com/mawww/kakoune/tree/v2018.04.13)). Please check out the [v9999.99.99](https://github.com/nkoehring/kakoune-todo.txt/tree/v9999.99.99) tree for compatibility with Kakounes unstable version.
+The master branch should work with the release version of Kakoune (currently [v2019.01.20](https://github.com/mawww/kakoune/tree/v2019.01.20)). I'm currently not checking for compatibility with Kakounes unstable version.
 
 ## Highlighting
 
